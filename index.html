@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高效能 跨媒体关联平台</title>
+
+</head>
+<body>
+
+<div class="header">
+    <h1>高效能 跨媒体关联平台</h1>
+<!--    可以放一个logo-->
+    <div class="navbar">
+        <a href="index.html">首页</a>
+        <a href="dirction/direction1.html">方向1</a>
+        <a href="#two">方向2</a>
+        <a href="#three">方向3</a>
+        <a href="#four">方向4</a>
+        <a href="https://cszhengzhang.cn">个人主页</a>
+    </div>
+</div>
+
+
+
+<img class="main-image" src="https://via.placeholder.com/1200x400" alt="大图片">
+
+<div class="container">
+    <div class="modal">
+        <a href="dirction/direction1.html">
+            <img src="https://via.placeholder.com/300x200" alt="图片1">
+            <div class="directiontitle">
+                <h3>方向1</h3>
+            </div>
+            <div class="directioninf">
+                <p>这是方向1的内容。这是方向1的内容。这是方向1的内容。这是方向1的内容。这是方向1的内容。这是方向1的内容。这是方向1的内容。这是方向1的内容。这是方向1的内容。这是方向1的内容。</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="modal">
+        <a href="direction2.html">
+            <img src="https://via.placeholder.com/300x200" alt="图片2">
+            <div class="directiontitle">
+                <h3>方向2</h3>
+            </div>
+            <div class="directioninf">
+                <p>这是方向2的内容。</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="modal">
+        <a href="direction3.html">
+            <img src="https://via.placeholder.com/300x200" alt="图片3">
+            <div class="directiontitle">
+                <h3>方向3</h3>
+            </div>
+            <div class="directioninf">
+                <p>这是方向3的内容。</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="modal">
+        <a href="direction4.html">
+            <img src="https://via.placeholder.com/300x200" alt="图片4">
+            <div class="directiontitle">
+                <h3>方向4</h3>
+            </div>
+            <div class="directioninf">
+                <p>这是方向4的内容。</p>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="footer">
+    <p>高效能 跨媒体关联平台</p>
+    <p>个人主页：<a href="https://cszhengzhang.cn">cszhengzhang.cn</a></p>
+    <p>联系方式：email@example.com</p>
+</div>
+
+</body>
+
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f6f6f6;
+    }
+
+    .header {
+        background-color: #005375;
+        color: #fff;
+        /*padding: 1rem;*/
+        text-align: center;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: center;
+        background-color: #024562;
+    }
+
+    .navbar a {
+        color: white;
+        padding: 1rem;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .navbar a:hover {
+        background-color: #bc9955;
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 1rem;
+        background-color: #f6f6f6;
+    }
+
+    .modal {
+        background-color: #ffffff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin: 1rem;
+        max-width: 300px;
+        text-align: center;
+        width: 100%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .modal a{
+        /*color: #005375;*/
+        /*padding: 1rem;*/
+        text-decoration: none;
+        /*text-align: center;*/
+    }
+
+    .modal img {
+        border-bottom: 1px solid #ddd;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        max-width: 100%;
+        width: 100%;
+        height: 200px;
+    }
+
+    .directiontitle {
+        color: #005375;
+        margin: 0 1rem 0 1rem;
+    }
+
+    .directioninf {
+        color: #555555;
+        margin: 0 1rem 2rem 1rem;
+    }
+
+    .footer {
+        background-color: #00415c;
+        color: #fff;
+        text-align: center;
+        padding: 1rem;
+        /*text-align: left;*/
+    }
+
+    .footer p {
+        margin: 0.5rem 0;
+    }
+
+    .footer a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .footer a:hover {
+        text-decoration: underline;
+    }
+
+    .main-image {
+        padding-top: 9rem;
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+        background-color: #f6f6f6;
+    }
+</style>
+</html>

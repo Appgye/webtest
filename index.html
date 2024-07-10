@@ -6,6 +6,15 @@
     <title>高效能 跨媒体关联平台</title>
 
 </head>
+
+<script>
+    function toggleMenu() {
+        var navbar = document.querySelector('.navbar');
+        navbar.classList.toggle('active');
+    }
+</script>
+
+
 <body>
 
 <div class="header">
@@ -15,6 +24,8 @@
     </div>
 
 <!--    可以放一个logo-->
+    <!--    移动端适配-->
+    <div class="menu-icon" onclick="toggleMenu()">☰ 导航</div>
     <div class="navbar">
         <a href="index.html">首页</a>
         <a href="dirction/direction1.html">方向1</a>
@@ -22,6 +33,7 @@
         <a href="#three">方向3</a>
         <a href="#four">方向4</a>
         <a href="https://cszhengzhang.cn">个人主页</a>
+        <a href="https://cszhengzhang.cn">课题组主页</a>
     </div>
 </div>
 
@@ -124,6 +136,53 @@
         justify-content: center;
         background-color: #024562;
     }
+    /*适配移动端*/
+    /*桌面端*/
+    @media (min-width: 768px) {
+        .navbar {
+            flex-direction: row;
+        }
+        .menu-icon {
+            display: none;
+        }
+    }
+    /*移动端*/
+    @media (max-width: 768px) {
+        .navbar {
+            flex-direction: column;
+            /*display: none; !* 默认隐藏 *!*/
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out; /* 折叠和展开动画 */
+        }
+
+        .navbar a {
+            display: block;
+            text-align: center;
+            padding: 0.5rem 1rem;
+            border-bottom: 1px solid #015679; /* 添加分割线 */
+            /*width: calc(100% - 10rem); !* 调整分割线长度 *!*/
+            /*margin: 0 auto; !* 水平居中 *!*/
+        }
+        .navbar a:last-child {
+            border-bottom: none; /* 移除最后一个选项的分割线 */
+        }
+
+        .navbar.active {
+            /*display: flex; !* 当active类存在时显示 *!*/
+            max-height: 500px;
+        }
+
+        .menu-icon {
+            display: block;
+            background-color: #024562;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            cursor: pointer;
+        }
+    }
+
 
     .navbar a {
         color: white;
@@ -206,7 +265,8 @@
         /*padding-top: 9rem;*/
 
         width: 100%;
-        max-height: 400px;
+        /*max-height: 400px;*/
+        height: auto;
         object-fit: cover;
         background-color: #f6f6f6;
     }

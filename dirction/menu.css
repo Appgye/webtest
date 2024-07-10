@@ -1,0 +1,128 @@
+body {
+    /*font-family: Arial, sans-serif;*/
+    /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; !*"Open Sans";, *!*/
+    font-family: "Helvetica Neue", Helvetica, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f6f6f6;
+}
+
+/*标题栏*/
+.header {
+    background-color: #005375;
+    color: #fff;
+    /*padding: 1rem;*/
+    text-align: center;
+    /*position: fixed;*/
+    position: sticky;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    /*margin: 1rem 0 0 0;;*/
+}
+
+.headertext {
+    font-size: 30px;
+    font-weight: lighter;
+    /*margin: 1rem 0 r0 0;*/
+    padding: 1rem;
+}
+
+/*菜单栏*/
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #024562;
+}
+/*适配移动端*/
+/*桌面端*/
+@media (min-width: 768px) {
+    .navbar {
+        flex-direction: row;
+    }
+    .menu-icon {
+        display: none;
+    }
+}
+/*移动端*/
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        /*display: none; !* 默认隐藏 *!*/
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out; /* 折叠和展开动画 */
+    }
+
+    .navbar a {
+        /*background-color: #005375;*/
+        display: block;
+        text-align: center;
+        padding: 0.5rem 1rem;
+        border-top: 1px solid #015679; /* 添加分割线 */
+        /*width: calc(100% - 10rem); !* 调整分割线长度 *!*/
+        /*margin: 0 auto; !* 水平居中 *!*/
+    }
+    /*.navbar a:last-child {*/
+    /*    border-bottom: none; !* 移除最后一个选项的分割线 *!*/
+    /*}*/
+
+    .navbar.active {
+        /*display: flex; !* 当active类存在时显示 *!*/
+        max-height: 500px;
+    }
+
+    .menu-icon {
+        display: block;
+        background-color: #024562;
+        color: white;
+        text-align: center;
+        padding: 1rem;
+        cursor: pointer;
+    }
+}
+
+
+.navbar a {
+    color: white;
+    padding: 1rem;
+    text-decoration: none;
+    text-align: center;
+}
+
+.navbar a:hover {
+    background-color: #bc9955;
+}
+
+
+/*页脚*/
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem 0.5rem 1rem 0.5rem;
+    background-color: #00415c;
+    color: #fff;
+}
+.footer .column {
+    margin: 1rem 0.5rem 1rem 0.5rem;
+    max-width: 300px;
+    width: 100%;
+    justify-content: center;
+    text-align: left;
+
+    /*text-align: left;*/
+}
+.footer p {
+    margin: 0.5rem 0;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    word-wrap: break-word;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}

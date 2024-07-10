@@ -29,11 +29,11 @@
     <div class="navbar">
         <a href="index.html">首页</a>
         <a href="dirction/direction1.html">方向1</a>
-        <a href="#two">方向2</a>
-        <a href="#three">方向3</a>
-        <a href="#four">方向4</a>
+        <a href="dirction/direction2.html">方向2</a>
+        <a href="dirction/direction3.html">方向3</a>
+        <a href="dirction/direction4.html">方向4</a>
         <a href="https://cszhengzhang.cn">个人主页</a>
-        <a href="https://cszhengzhang.cn">课题组主页</a>
+        <a href="https://cszhengzhang.cn/BMI/">课题组主页</a>
     </div>
 </div>
 
@@ -157,16 +157,17 @@
         }
 
         .navbar a {
+            /*background-color: #005375;*/
             display: block;
             text-align: center;
             padding: 0.5rem 1rem;
-            border-bottom: 1px solid #015679; /* 添加分割线 */
+            border-top: 1px solid #015679; /* 添加分割线 */
             /*width: calc(100% - 10rem); !* 调整分割线长度 *!*/
             /*margin: 0 auto; !* 水平居中 *!*/
         }
-        .navbar a:last-child {
-            border-bottom: none; /* 移除最后一个选项的分割线 */
-        }
+        /*.navbar a:last-child {*/
+        /*    border-bottom: none; !* 移除最后一个选项的分割线 *!*/
+        /*}*/
 
         .navbar.active {
             /*display: flex; !* 当active类存在时显示 *!*/
@@ -212,6 +213,11 @@
         text-align: center;
         width: 100%;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* 添加动画效果 */
+    }
+    .modal:hover {
+        transform: translateY(-5px); /* 向上移动 */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 增强阴影效果 */
     }
 
     .modal a{

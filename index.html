@@ -7,13 +7,6 @@
 
 </head>
 
-<script>
-    function toggleMenu() {
-        var navbar = document.querySelector('.navbar');
-        navbar.classList.toggle('active');
-    }
-</script>
-
 
 <body>
 
@@ -38,8 +31,28 @@
 </div>
 
 
-
-<img class="main-image" src="https://via.placeholder.com/1200x400" alt="大图片">
+<!--一张图片-->
+<!--<img class="main-image" src="https://via.placeholder.com/1200x400" alt="大图片">-->
+<!--多张图片轮播-->
+<div class="carousel">
+    <div class="carousel-images">
+<!--        图片放1500x500或者3000x1000-->
+        <img src="source/main/pic1.png" alt="图片1">
+        <img src="source/main/pic2.png" alt="图片2">
+        <img src="source/main/pic3.png" alt="图片3">
+    </div>
+<!--    底部按钮-->
+    <div class="carousel-indicators">
+        <div class="active" onclick="showSlide(0)"></div>
+        <div onclick="showSlide(1)"></div>
+        <div onclick="showSlide(2)"></div>
+    </div>
+<!--    切换按钮-->
+    <div class="carousel-buttons">
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
+    </div>
+</div>
 
 <div class="container">
     <div class="modal">
@@ -104,6 +117,65 @@
 </div>
 
 </body>
+
+
+<script>
+    //移动端列表按钮
+    function toggleMenu() {
+        var navbar = document.querySelector('.navbar');
+        navbar.classList.toggle('active');
+    }
+
+    // 首页图片轮播
+    var currentIndex = 0;
+    var slides = document.querySelectorAll('.carousel-images img');
+    var indicators = document.querySelectorAll('.carousel-indicators div');
+    var slideInterval = setInterval(nextSlide, 5000); // 自动切换图片
+
+    function showSlide(index) {
+        if (index >= slides.length) {
+            currentIndex = 0;
+        } else if (index < 0) {
+            currentIndex = slides.length - 1;
+        } else {
+            currentIndex = index;
+        }
+
+        var offset = -currentIndex * 100;
+        document.querySelector('.carousel-images').style.transform = 'translateX(' + offset + '%)';
+
+        indicators.forEach(function(indicator, i) {
+            indicator.classList.toggle('active', i === currentIndex);
+        });
+    }
+
+    // 切换
+    function nextSlide() {
+        currentIndex++;
+        resetSlideInterval();
+        showSlide(currentIndex);
+    }
+    function prevSlide() {
+        currentIndex--;
+        resetSlideInterval();
+        showSlide(currentIndex);
+    }
+
+    // 定时切换
+    function resetSlideInterval() {
+        clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, 5000); // 自动切换图片
+    }
+
+    document.querySelectorAll('.carousel-indicators div').forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            showSlide(index);
+            resetSlideInterval(); // 手动切换后重置定时器
+        });
+    });
+
+    resetSlideInterval(); // 初始化定时器
+</script>
 
 
 <style>
@@ -287,14 +359,89 @@
         text-decoration: underline;
     }
 
-    .main-image {
-        /*padding-top: 9rem;*/
 
+    /*一张图片*/
+    /*.main-image {*/
+    /*    !*padding-top: 9rem;*!*/
+
+    /*    width: 100%;*/
+    /*    !*max-height: 400px;*!*/
+    /*    height: auto;*/
+    /*    object-fit: cover;*/
+    /*    background-color: #f6f6f6;*/
+    /*}*/
+
+
+    /*多张图片轮播*/
+    .carousel {
+        position: relative;
         width: 100%;
-        /*max-height: 400px;*/
+        height: auto;
+        /*max-height: 500px;*/
+        object-fit: fill; /* cover*/
+        background-color: #f6f6f6;
+        overflow: hidden;
+    }
+
+    .carousel-images {
+        display: flex;
+        width: 100%; /* 适应容器宽度 */
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-images img {
+        /*width: 1500px;*/
+        /*height: 500px;*/
+        width: 100%;
         height: auto;
         object-fit: cover;
-        background-color: #f6f6f6;
     }
+
+    .carousel-indicators {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+    }
+
+    .carousel-indicators div {
+        height: 10px;
+        width: 10px;
+        margin: 0 5px;
+        background-color: #ffffff;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .carousel-indicators .active {
+        background-color: #000000;
+    }
+
+    .carousel-buttons {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+    }
+
+    .carousel-buttons button {
+        background-color: rgba(0, 0, 0, 0.5);
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+        transition: background-color 0.3s;
+    }
+
+    .carousel-buttons button:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
 </style>
+
 </html>

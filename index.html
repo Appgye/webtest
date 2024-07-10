@@ -92,10 +92,15 @@
 </div>
 
 <div class="footer">
-    <p>高效能 跨媒体关联平台</p>
-    <p>Dr Zheng Zhang @ HITSZ</p>
-    <p>个人主页：<a href="https://cszhengzhang.cn">cszhengzhang.cn</a></p>
-    <p>联系方式：email@example.com</p>
+    <div class="column">
+        <p style="font-size: 24px; font-weight: lighter;">高效能 跨媒体关联平台</p>
+        <p>Dr Zheng Zhang @ HITSZ</p>
+    </div>
+    <div class="column">
+        <p style="font-size: 18px;">联系方式</p>
+        <p>个人主页：<a href="https://cszhengzhang.cn">cszhengzhang.cn</a></p>
+        <p>课题组主页：<a href="https://cszhengzhang.cn/BMI/">cszhengzhang.cn/BMI</a></p>
+    </div>
 </div>
 
 </body>
@@ -249,11 +254,26 @@
     .footer {
         background-color: #00415c;
         color: #fff;
-        text-align: center;
-        padding: 1rem;
+        /*text-align: center;*/
+        /*padding: 1rem 15rem 1rem 15rem;*/
+        /*text-align: left;*/
+        display: flex;
+        /*justify-content: space-between;*/
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .footer .column {
+        /*flex: auto;*/
+        min-width: 260px; /* 设置每列的最小宽度 */
+        max-width: 300px; /* 设置每列的最小宽度 */
+        padding: 1rem 5rem 1rem 5rem;
+        justify-content: center;
+        text-align: left;
+
         /*text-align: left;*/
     }
-
     .footer p {
         margin: 0.5rem 0;
     }

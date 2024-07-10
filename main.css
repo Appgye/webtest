@@ -7,6 +7,7 @@ body {
     background-color: #f6f6f6;
 }
 
+/*标题栏*/
 .header {
     background-color: #005375;
     color: #fff;
@@ -15,7 +16,7 @@ body {
     /*position: fixed;*/
     position: sticky;
     width: 100%;
-    top: 0px;
+    top: 0;
     z-index: 1000;
     /*margin: 1rem 0 0 0;;*/
 }
@@ -27,6 +28,7 @@ body {
     padding: 1rem;
 }
 
+/*菜单栏*/
 .navbar {
     display: flex;
     justify-content: center;
@@ -100,6 +102,7 @@ body {
     background-color: #f6f6f6;
 }
 
+/*选项卡*/
 .modal {
     background-color: #ffffff;
     border: 1px solid #ddd;
@@ -142,11 +145,12 @@ body {
     margin: 0 1rem 2rem 1rem;
 }
 
+/*页脚*/
 .footer {
     background-color: #00415c;
     color: #fff;
     /*text-align: center;*/
-    /*padding: 1rem 15rem 1rem 15rem;*/
+    padding: 1rem 0 1rem 0;
     /*text-align: left;*/
     display: flex;
     /*justify-content: space-between;*/
@@ -157,7 +161,7 @@ body {
 }
 .footer .column {
     /*flex: auto;*/
-    min-width: 260px; /* 设置每列的最小宽度 */
+    /*min-width: 260px; !* 设置每列的最小宽度 *!*/
     max-width: 300px; /* 设置每列的最小宽度 */
     padding: 1rem 5rem 1rem 5rem;
     justify-content: center;

@@ -147,23 +147,17 @@ body {
 
 /*页脚*/
 .footer {
-    background-color: #00415c;
-    color: #fff;
-    /*text-align: center;*/
-    padding: 1rem 0 1rem 0;
-    /*text-align: left;*/
     display: flex;
-    /*justify-content: space-between;*/
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-
+    padding: 1rem;
+    background-color: #00415c;
+    color: #fff;
 }
 .footer .column {
-    /*flex: auto;*/
-    /*min-width: 260px; !* 设置每列的最小宽度 *!*/
-    max-width: 300px; /* 设置每列的最小宽度 */
-    padding: 1rem 5rem 1rem 5rem;
+    margin: 1rem;
+    max-width: 300px;
+    width: 100%;
     justify-content: center;
     text-align: left;
 
@@ -176,6 +170,7 @@ body {
 .footer a {
     color: #fff;
     text-decoration: none;
+    word-wrap: break-word;
 }
 
 .footer a:hover {

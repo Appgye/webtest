@@ -9,7 +9,11 @@
 <body>
 
 <div class="header">
-    <h1>高效能 跨媒体关联平台</h1>
+<!--    <h1>高效能 跨媒体关联平台</h1>-->
+    <div class="headertext">
+        高效能 跨媒体关联平台
+    </div>
+
 <!--    可以放一个logo-->
     <div class="navbar">
         <a href="index.html">首页</a>
@@ -77,6 +81,7 @@
 
 <div class="footer">
     <p>高效能 跨媒体关联平台</p>
+    <p>Dr Zheng Zhang @ HITSZ</p>
     <p>个人主页：<a href="https://cszhengzhang.cn">cszhengzhang.cn</a></p>
     <p>联系方式：email@example.com</p>
 </div>
@@ -86,7 +91,9 @@
 
 <style>
     body {
-        font-family: Arial, sans-serif;
+        /*font-family: Arial, sans-serif;*/
+        /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; !*"Open Sans";, *!*/
+        font-family: "Helvetica Neue", Helvetica, Tahoma, sans-serif;
         margin: 0;
         padding: 0;
         background-color: #f6f6f6;
@@ -97,10 +104,19 @@
         color: #fff;
         /*padding: 1rem;*/
         text-align: center;
-        position: fixed;
+        /*position: fixed;*/
+        position: sticky;
         width: 100%;
-        top: 0;
+        top: 0px;
         z-index: 1000;
+        /*margin: 1rem 0 0 0;;*/
+    }
+
+    .headertext {
+        font-size: 30px;
+        font-weight: lighter;
+        /*margin: 1rem 0 r0 0;*/
+        padding: 1rem;
     }
 
     .navbar {
@@ -187,7 +203,8 @@
     }
 
     .main-image {
-        padding-top: 9rem;
+        /*padding-top: 9rem;*/
+
         width: 100%;
         max-height: 400px;
         object-fit: cover;

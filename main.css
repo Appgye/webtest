@@ -204,6 +204,7 @@ body {
 .carousel-images {
     display: flex;
     width: 100%; /* 适应容器宽度 */
+    transform: translateX(-100%);  /* 初始显示第二张照片 */
     transition: transform 0.5s ease-in-out;
 }
 
@@ -215,6 +216,7 @@ body {
     object-fit: cover;
 }
 
+/*轮播圆点*/
 .carousel-indicators {
     position: absolute;
     bottom: 10px;
@@ -224,7 +226,7 @@ body {
     justify-content: center;
 }
 
-/*轮播圆点*/
+
 .carousel-indicators div {
     height: 10px;
     width: 10px;
@@ -233,6 +235,11 @@ body {
     border-radius: 15%;
     cursor: pointer;
     transition: background-color 0.3s ease;
+}
+
+.carousel-indicators div:first-child,
+.carousel-indicators div:last-child {
+    display: none;
 }
 
 .carousel-indicators .active {

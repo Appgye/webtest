@@ -188,18 +188,27 @@ document.querySelectorAll('.carousel-indicators div').forEach((indicator, index)
 // }, false);
 
 // 新版本：图片实时更新位置
-var startX, endX, moveX;
+var startX, endX, moveX, moveY; //moveY是为了在左右滑动时忽略上下的移动带来的影响（手感问题）
 
 document.querySelector('.carousel').addEventListener('touchstart', function(event) {
     startX = event.touches[0].clientX;
+    startY = event.touches[0].clientY;
     document.querySelector('.carousel-images').style.transition = 'none'; // 移除过渡效果
 }, false);
 
 document.querySelector('.carousel').addEventListener('touchmove', function(event) {
     moveX = event.touches[0].clientX;
-    var offset = (moveX - startX) / document.querySelector('.carousel').offsetWidth * 100;
-    var translateX = -currentIndex * 100 + offset;
-    document.querySelector('.carousel-images').style.transform = 'translateX(' + translateX + '%)';
+    moveY = event.touches[0].clientY;
+
+    // 计算水平和垂直移动距离
+    var deltaX = Math.abs(moveX - startX);
+    var deltaY = Math.abs(moveY - startY);
+
+    if (deltaX > deltaY) { // 只关注水平移动
+        var offset = (moveX - startX) / document.querySelector('.carousel').offsetWidth * 100;
+        var translateX = -currentIndex * 100 + offset;
+        document.querySelector('.carousel-images').style.transform = 'translateX(' + translateX + '%)';
+    }
 }, false);
 
 document.querySelector('.carousel').addEventListener('touchend', function(event) {

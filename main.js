@@ -208,6 +208,8 @@ document.querySelector('.carousel').addEventListener('touchmove', function(event
         var offset = (moveX - startX) / document.querySelector('.carousel').offsetWidth * 100;
         var translateX = -currentIndex * 100 + offset;
         document.querySelector('.carousel-images').style.transform = 'translateX(' + translateX + '%)';
+
+        event.preventDefault();  // 阻止默认的滚动行为
     }
 }, false);
 

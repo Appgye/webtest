@@ -224,19 +224,23 @@ body {
     justify-content: center;
 }
 
+/*轮播圆点*/
 .carousel-indicators div {
     height: 10px;
     width: 10px;
     margin: 0 5px;
-    background-color: #ffffff;
-    border-radius: 50%;
+    /*background-color: #ffffff;*/
+    background-color: rgba(255, 255, 255, 0.5); /* 透明白色 */
+    /*border-radius: 50%;*/
     cursor: pointer;
+    transition: background-color 0.3s ease; /* 添加动画效果 */
 }
 
 .carousel-indicators .active {
-    background-color: #000000;
+    /*background-color: #000000;*/
+    background-color: #ffffff; /* 纯白色 */
 }
-
+/*轮播左右切换按钮*/
 .carousel-buttons {
     position: absolute;
     top: 50%;
@@ -247,15 +251,23 @@ body {
 }
 
 .carousel-buttons button {
-    background-color: rgba(0, 0, 0, 0.5);
+    /*background-color: rgba(0, 0, 0, 0.5);*/
+    background-color: rgba(2, 69, 98, 0.5);
     border: none;
     color: white;
     font-size: 24px;
     cursor: pointer;
     padding: 0.5rem 1rem;
+    margin: 1.5rem;
     transition: background-color 0.3s;
+}
+@media (max-width: 768px) {
+    .carousel-buttons button {
+        margin: 0.5rem;
+    }
 }
 
 .carousel-buttons button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    /*background-color: rgba(0, 0, 0, 0.8);*/
+    background-color: #005375
 }

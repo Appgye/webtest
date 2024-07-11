@@ -5,7 +5,7 @@ function toggleMenu() {
 }
 
 // 首页图片轮播
-var currentIndex = 1;
+var currentIndex = 1; // 这里初始化的是实际上第二张图片
 var slides = document.querySelectorAll('.carousel-images img');
 var indicators = document.querySelectorAll('.carousel-indicators div');
 var slideInterval = setInterval(nextSlide, 5000); // 自动切换图片
@@ -57,34 +57,73 @@ function resetSlideInterval() {
 // 新版本切换：优化首尾页无缝切换
 function showSlide(index) {
     if (index >= slides.length - 1) {
-        // console.log('s'+index);
-        // var offset = -currentIndex * 100 - 100;
-        currentIndex = 1; // 切换到克隆的第一张图片（更新实际的index）
-        document.querySelector('.carousel-images').style.transition = 'none'; // 瞬间切换
-        document.querySelector('.carousel-images').style.transform = 'translateX(0)';
-        setTimeout(function() {
-            document.querySelector('.carousel-images').style.transition = 'transform 0.5s ease-in-out'; // 添加过渡效果
-            showSlide(currentIndex);
-        }, 0);
-    } else if (index <= 0) {
-        // console.log(2);
-        currentIndex = slides.length - 1; // 切换到克隆的最后一张图片
-        document.querySelector('.carousel-images').style.transition = 'none'; // 瞬间切换
-        document.querySelector('.carousel-images').style.transform = 'translateX(' + (-currentIndex * 100) + '%)';
-        currentIndex = slides.length - 2; // 更新实际的index
-        setTimeout(function() {
-            document.querySelector('.carousel-images').style.transition = 'transform 0.5s ease-in-out'; // 添加过渡效果
-            showSlide(currentIndex);
-        }, 0);
-    } else {
-        // console.log('z'+index);
-        // console.log(3);
+        document.querySelector('.carousel-images').style.transition = 'transform 0.5s ease-in-out'; // 添加过渡效果
         currentIndex = index;
         var offset = -currentIndex * 100;
         document.querySelector('.carousel-images').style.transform = 'translateX(' + offset + '%)';
 
+        console.log('s'+index);
+        // currentIndex = 1;
+        setTimeout(() => {
+            // 瞬间切换到第一张
+            document.querySelector('.carousel-images').style.transition = 'none';
+            currentIndex = 1;
+            offset = -currentIndex * 100;
+            document.querySelector('.carousel-images').style.transform = 'translateX(' + offset + '%)';
+            updateIndicators();
+            // 恢复过渡效果
+            setTimeout(() => {
+                document.querySelector('.carousel-images').style.transition = 'transform 0.5s ease-in-out';
+            }, 50); // 50 毫秒的延迟可以根据需要调整
+        }, 500); // 500 毫秒的延迟与过渡时间相同
+
+        // var offset = -currentIndex * 100 - 100;
+        // document.querySelector('.carousel-images').style.transition = 'none'; // 瞬间切换
+        // document.querySelector('.carousel-images').style.transform = 'translateX(-100%)';
+        // document.querySelector('.carousel-images').style.transition = 'transform 0.5s ease-in-out'; // 添加过渡效果
+        // currentIndex = 1; // 切换到克隆的第一张图片（更新实际的index）
+        // setTimeout(function() {
+        //     document.querySelector('.carousel-images').style.transition = 'transform 0.5s ease-in-out'; // 添加过渡效果
+        //     showSlide(currentIndex);
+        // }, 0);
+    } else if (index <= 0) {
+        // console.log(2);
+        // currentIndex = slides.length - 1; // 切换到克隆的最后一张图片
+        // document.querySelector('.carousel-images').style.transition = 'none'; // 瞬间切换
+        // document.querySelector('.carousel-images').style.transform = 'translateX(' + (-currentIndex * 100) + '%)';
+        // currentIndex = slides.length - 2; // 更新实际的index
+        // setTimeout(function() {
+        //     document.querySelector('.carousel-images').style.transition = 'transform 0.5s ease-in-out'; // 添加过渡效果
+        //     showSlide(currentIndex);
+        //     updateIndicators();
+        // }, 0);
+        document.querySelector('.carousel-images').style.transition = 'transform 0.5s ease-in-out'; // 添加过渡效果
+        currentIndex = index;
+        var offset = -currentIndex * 100;
+        document.querySelector('.carousel-images').style.transform = 'translateX(0)';
+
+        setTimeout(() => {
+            // 瞬间切换到第一张
+            document.querySelector('.carousel-images').style.transition = 'none';
+            currentIndex = slides.length - 2;
+            offset = -currentIndex * 100;
+            document.querySelector('.carousel-images').style.transform = 'translateX(' + offset + '%)';
+            updateIndicators();
+            // 恢复过渡效果
+            setTimeout(() => {
+                document.querySelector('.carousel-images').style.transition = 'transform 0.5s ease-in-out';
+            }, 50); // 50 毫秒的延迟可以根据需要调整
+        }, 500); // 500 毫秒的延迟与过渡时间相同
+
+    } else {
+        console.log('z'+index);
+        // console.log(3);
+        currentIndex = index;
+        var offset = -currentIndex * 100;
+        document.querySelector('.carousel-images').style.transform = 'translateX(' + offset + '%)';
+        updateIndicators();
     }
-    updateIndicators();
+    // updateIndicators();
     // resetSlideInterval(); // 手动切换后重置定时器
 }
 //下面的灯亮起逻辑
@@ -102,7 +141,7 @@ function updateIndicators() {
 function nextSlide() {
     // console.log('ok1');
     currentIndex++;
-
+    console.log(currentIndex);
     showSlide(currentIndex);
     resetSlideInterval();
 }
@@ -125,6 +164,53 @@ document.querySelectorAll('.carousel-indicators div').forEach((indicator, index)
 });
 
 
+// 实现手指滑动切换图片
 
-// resetSlideInterval(); // 初始化定时器
+// 老版本：可以移动，但是图片不跟手
+// // 手指滑动变量
+// var startX, endX;
+//
+// document.querySelector('.carousel').addEventListener('touchstart', function(event) {
+//     startX = event.touches[0].clientX;
+// }, false);
+//
+// document.querySelector('.carousel').addEventListener('touchmove', function(event) {
+//     endX = event.touches[0].clientX;
+// }, false);
+//
+// document.querySelector('.carousel').addEventListener('touchend', function(event) {
+//     var threshold = 50; // 定义滑动切换的最小距离
+//     if (startX - endX > threshold) {
+//         nextSlide();
+//     } else if (endX - startX > threshold) {
+//         prevSlide();
+//     }
+// }, false);
 
+// 新版本：图片实时更新位置
+var startX, endX, moveX;
+
+document.querySelector('.carousel').addEventListener('touchstart', function(event) {
+    startX = event.touches[0].clientX;
+    document.querySelector('.carousel-images').style.transition = 'none'; // 移除过渡效果
+}, false);
+
+document.querySelector('.carousel').addEventListener('touchmove', function(event) {
+    moveX = event.touches[0].clientX;
+    var offset = (moveX - startX) / document.querySelector('.carousel').offsetWidth * 100;
+    var translateX = -currentIndex * 100 + offset;
+    document.querySelector('.carousel-images').style.transform = 'translateX(' + translateX + '%)';
+}, false);
+
+document.querySelector('.carousel').addEventListener('touchend', function(event) {
+    endX = event.changedTouches[0].clientX;
+    var threshold = 50; // 定义滑动切换的最小距离
+    if (startX - endX > threshold) {
+        nextSlide();
+    } else if (endX - startX > threshold) {
+        prevSlide();
+    } else {
+        showSlide(currentIndex); // 滑动距离不足，回弹到当前图片
+    }
+    document.querySelector('.carousel-images').style.transition = 'transform 0.5s ease-in-out'; // 恢复过渡效果
+}, false);

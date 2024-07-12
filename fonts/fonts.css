@@ -1,0 +1,152 @@
+/*英文：谷歌字体*/
+@font-face {
+    font-family: 'Merriweather Sans';
+    src: url('MerriweatherSans/MerriweatherSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Merriweather Sans';
+    src: url('MerriweatherSans/MerriweatherSans-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Merriweather Sans';
+    src: url('MerriweatherSans/MerriweatherSans-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Merriweather Sans';
+    src: url('MerriweatherSans/MerriweatherSans-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Merriweather Sans';
+    src: url('MerriweatherSans/MerriweatherSans-ExtraBoldItalic.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Merriweather Sans';
+    src: url('MerriweatherSans/MerriweatherSans-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Merriweather Sans';
+    src: url('MerriweatherSans/MerriweatherSans-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Merriweather Sans';
+    src: url('MerriweatherSans/MerriweatherSans-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+/*中文+英文：小米字体*/
+@font-face {
+    font-family: 'MiSans';
+    src: url('MiSans/MiSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MiSans';
+    src: url('MiSans/MiSans-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MiSans';
+    src: url('MiSans/MiSans-Demibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MiSans';
+    src: url('MiSans/MiSans-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MiSans';
+    src: url('MiSans/MiSans-Heavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MiSans';
+    src: url('MiSans/MiSans-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MiSans';
+    src: url('MiSans/MiSans-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MiSans';
+    src: url('MiSans/MiSans-Normal.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MiSans';
+    src: url('MiSans/MiSans-Semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MiSans';
+    src: url('MiSans/MiSans-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+/*h1 {*/
+/*    font-weight: bold;*/
+/*    font-size: 28px; !* 根据设计需要调整标题大小 *!*/
+/*}*/
+
+/*h2 {*/
+/*    font-weight: bold;*/
+/*    font-size: 24px; !* 调整标题大小 *!*/
+/*}*/
+
+h3 {
+    font-weight: 600;
+    /*font-size: 20px; !* 调整标题大小 *!*/
+}
+
+h4 {
+    font-weight: 600;
+    /*font-size: 18px; !* 调整标题大小 *!*/
+}
+
+h5 {
+    font-weight: 600;
+    /*font-size: 16px; !* 调整标题大小 *!*/
+}

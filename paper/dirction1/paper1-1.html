@@ -40,14 +40,38 @@
     </div>
 
     <div class="information">
-        期刊：Advances in Neural Information Processing Systems<br>
-
-        作者：Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Łukasz Kaiser, Illia Polosukhin<br>
-        时间：2017
+        <div class="Journal">
+    <!--        <span class="Journaltitle">-->
+    <!--            期刊:-->
+    <!--        </span>-->
+            <span class="Journalinf">
+                Advances in Neural Information Processing Systems
+            </span>
+        </div>
+        <div class="author">
+            <span class="authortitle">
+                Authors:
+            </span>
+            <span class="authorinf">
+                Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Łukasz Kaiser, Illia Polosukhin<br>
+            </span>
+        </div>
+        <div class="publish">
+            <span class="publishtitle">
+                Published:
+            </span>
+            <span class="publishinf">
+                2017
+            </span>
+        </div>
     </div>
-<!--    </div>-->
+
+<!--    <div class="fengexian"></div>-->
 
     <div class="kuang">
+        <div class="section-title">
+            论文插图
+        </div>
         <div class="pic">
             <!--    <img src="https://via.placeholder.com/300" alt="Image 1" style="margin-right: 10px;">-->
             <!--    <img src="https://via.placeholder.com/300" alt="Image 2">-->
@@ -57,14 +81,53 @@
     </div>
 
     <div class="kuang">
+        <div class="section-title">
+            摘要
+        </div>
         <div class="abstract">
-            <div class="biaoti">
-                <div class="biaoti_inf">摘要</div>
-            </div>
-            <p>The dominant sequence transduction models are based on complex recurrent orconvolutional neural networks in an encoder and decoder configuration. The best performing such models also connect the encoder and decoder through an attentionm echanisms. We propose a novel, simple network architecture based solely onan attention mechanism, dispensing with recurrence and convolutions entirely.Experiments on two machine translation tasks show these models to be superiorin quality while being more parallelizable and requiring significantly less timeto train. Our single model with 165 million parameters, achieves 27.5 BLEU onEnglish-to-German translation, improving over the existing best ensemble result by over 1 BLEU. On English-to-French translation, we outperform the previoussingle state-of-the-art with model by 0.7 BLEU, achieving a BLEU score of 41.1.</p>
+            The dominant sequence transduction models are based on complex recurrent orconvolutional neural networks in
+            an encoder and decoder configuration. The best performing such models also connect the encoder and decoder
+            through an attentionm echanisms. We propose a novel, simple network architecture based solely onan attention
+            mechanism, dispensing with recurrence and convolutions entirely.Experiments on two machine translation tasks
+            show these models to be superiorin quality while being more parallelizable and requiring significantly less
+            timeto train. Our single model with 165 million parameters, achieves 27.5 BLEU onEnglish-to-German
+            translation, improving over the existing best ensemble result by over 1 BLEU. On English-to-French
+            translation, we outperform the previoussingle state-of-the-art with model by 0.7 BLEU, achieving a BLEU
+            score of 41.1.
+        </div>
+    </div>
+
+    <div class="kuang">
+        <div class="section-title">
+            目录
+        </div>
+        <div class="mulu">
+            <ul class="toc">
+                <li class="toc-item level-1"><a href="#section1">前言</a></li>
+                <li class="toc-item level-1 has-children"><a href="#section2">研究方法</a>
+                    <ul class="toc">
+                        <li class="toc-item level-2"><a href="#section2-1">数据集</a></li>
+                        <li class="toc-item level-2"><a href="#section2-2">模型架构</a></li>
+                    </ul>
+                </li>
+                <li class="toc-item level-1 has-children"><a href="#section3">实验结果</a>
+                    <ul class="toc">
+                        <li class="toc-item level-2 has-children"><a href="#section3-1">性能评价</a>
+                            <ul class="toc">
+                                <li class="toc-item level-3"><a href="#section3-1-1">评价指标</a></li>
+                                <li class="toc-item level-3"><a href="#section3-1-2">实验结果</a></li>
+                            </ul>
+                        </li>
+                        <li class="toc-item level-2"><a href="#section3-2">模型对比</a></li>
+                    </ul>
+                </li>
+                <li class="toc-item level-1"><a href="#section4">结论</a></li>
+            </ul>
         </div>
     </div>
 </div>
+
+<div style="margin-bottom: 3rem;"></div>
 
 
 <div class="footer">
@@ -83,6 +146,7 @@
 
 
 <script src="../menu.js"></script>
+<script src="../toc.js"></script>
 
 
 </html>

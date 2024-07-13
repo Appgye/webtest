@@ -232,7 +232,7 @@ body {
         top: 100%;
         left: 0;
         width: 100%;
-        background-color: #005375;
+        background-color: #024562;
         z-index: 1000;
     }
 
@@ -253,7 +253,7 @@ body {
     }
     .header {
         position: sticky;
-        background: #015679;
+        background: #005375;
     }
 
     .header-logo {

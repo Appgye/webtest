@@ -3,6 +3,15 @@ function toggleMenu() {
     var navbar = document.querySelector('.navbar');
     navbar.classList.toggle('active');
 }
+// 监测向下滑动
+window.addEventListener('scroll', function() {
+    var header = document.querySelector('.header');
+    if (window.scrollY > 0) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
 
 // 首页图片轮播
 var currentIndex = 1; // 这里初始化的是实际上第二张图片
@@ -228,16 +237,4 @@ document.querySelector('.carousel').addEventListener('touchend', function(event)
 
 
 
-function toggleMenu() {
-    var navbar = document.querySelector('.navbar');
-    navbar.classList.toggle('active');
-}
 
-window.addEventListener('scroll', function() {
-    var header = document.querySelector('.header');
-    if (window.scrollY > 0) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
-});

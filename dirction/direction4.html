@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>高效能 跨媒体关联平台</title>
+
+
     <link rel="stylesheet" href="menu.css">
     <link rel="stylesheet" href="card.css">
 
@@ -11,29 +13,32 @@
 <body>
 
 <div class="header">
-    <!--    <h1>高效能 跨媒体关联平台</h1>-->
-    <div class="headertext">
-        高效能 跨媒体关联平台
-    </div>
-
-    <!--    可以放一个logo-->
-    <!--    移动端适配-->
-    <div class="menu-icon" onclick="toggleMenu()">☰ 导航</div>
-    <div class="navbar">
-        <a href="../index.html">首页</a>
-        <a href="direction1.html">方向1</a>
-        <a href="direction2.html">方向2</a>
-        <a href="direction3.html">方向3</a>
-        <a href="direction4.html">方向4</a>
-        <a href="https://cszhengzhang.cn">个人主页</a>
-        <a href="https://cszhengzhang.cn/BMI/">课题组主页</a>
+    <div class="header-content">
+        <div class="header-left">
+            <img src="../source/static/hitlogo.png" alt="Logo" class="header-logo">
+            <div class="line"></div>
+            <div class="headertext">
+                <div class="group-name">高效能 跨媒体关联平台</div>
+                <div class="group-name-en">Big Media Intelligence (BMI) Research Group</div>
+            </div>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <div class="navbar">
+            <a href="../index.html">首页</a>
+            <a href="../dirction/direction1.html">方向1</a>
+            <a href="../dirction/direction2.html">方向2</a>
+            <a href="../dirction/direction3.html">方向3</a>
+            <a href="../dirction/direction4.html">方向4</a>
+            <a href="https://cszhengzhang.cn">个人主页</a>
+            <a href="https://cszhengzhang.cn/BMI/">课题组主页</a>
+        </div>
     </div>
 </div>
 
 
 
 <div class="title">
-    <h1>方向4名称</h1>
+    方向4名称
     <!--    可以放一个logo-->
 </div>
 
@@ -169,17 +174,35 @@
             <img src="https://via.placeholder.com/300x200" alt="图片1">
         </a>
     </div>
+
+
 </div>
 
 <div class="footer">
-    <div class="column">
-        <p style="font-size: 24px; font-weight: lighter;">高效能 跨媒体关联平台</p>
-        <p>Dr Zheng Zhang @ HITSZ</p>
-    </div>
-    <div class="column">
-        <p style="font-size: 18px;">联系方式</p>
-        <p>个人主页：<a href="https://cszhengzhang.cn">cszhengzhang.cn</a></p>
-        <p>课题组主页：<a href="https://cszhengzhang.cn/BMI/">cszhengzhang.cn/BMI</a></p>
+    <div class="footerinf">
+        <div class="column">
+            <!--        <p style="font-size: 24px; font-weight: bold;">高效能 跨媒体关联平台</p>-->
+            <div class="header-left" style="margin: 0.5rem 0.5rem 0.5rem 0.5rem;">
+                <img src="../source/static/hitlogo.png" alt="Logo" class="header-logo">
+                <div class="line"></div>
+                <div class="headertext">
+                    <div class="group-name">高效能 跨媒体关联平台</div>
+                    <div class="group-name-en">Big Media Intelligence (BMI) Research Group</div>
+                </div>
+            </div>
+            <!--        <p>Dr Zheng Zhang @ HITSZ</p>-->
+        </div>
+        <div class="column">
+            <p class="footername">联系方式</p>
+            <p class="footeraddr">个人主页：<a href="https://cszhengzhang.cn">cszhengzhang.cn</a></p>
+            <p class="footeraddr">课题组主页：<a href="https://cszhengzhang.cn/BMI/">cszhengzhang.cn/BMI</a></p>
+        </div>
+        <div class="column">
+            <p class="footername">常用链接</p>
+            <p class="footeraddr"><a href="https://www.hitsz.edu.cn/index.html">哈尔滨工业大学（深圳）</a></p>
+            <p class="footeraddr"><a href="http://cs.hitsz.edu.cn/">哈尔滨工业大学（深圳）计算机科学与技术学院</a></p>
+            <p class="footeraddr"><a href="http://www.hit.edu.cn/">哈尔滨工业大学</a></p>
+        </div>
     </div>
 </div>
 
@@ -191,12 +214,40 @@
 
 <style>
     .title {
-        /*padding: 1rem;*/
         text-align: center;
-        background-color: #f6f6f6;
-        /*padding-top: 9rem;*/
-        color: #005375;
+        background-image: url(../source/static/hitsz.jpg);
+        background-size: cover; /* 调整背景图片大小以覆盖整个元素 */
+        background-position: center; /* 确保图片居中 */
+        color: #fff;
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 280px;
+        height: 200px;
+        backdrop-filter: blur(10px); /* 添加毛玻璃效果 */
+        -webkit-backdrop-filter: blur(10px); /* 兼容Safari */
+        position: relative; /* 为伪元素定位 */
     }
+    .title::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: inherit; /* 继承父元素的背景图片 */
+        backdrop-filter: blur(10px); /* 添加毛玻璃效果 */
+        z-index: -1; /* 确保伪元素在文本后面 */
+        filter: blur(10px); /* 添加模糊效果 */
+        transform: scale(1.5); /* 适当调整模糊后的尺寸 */
+
+    }
+    @media (max-width: 986px) {
+        .title {
+            line-height: 200px;
+
+        }
+    }
+
 
 </style>
 </html>

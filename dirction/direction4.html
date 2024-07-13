@@ -6,7 +6,6 @@
     <title>高效能 跨媒体关联平台</title>
     <link rel="icon" href="../source/static/logo.png" type="image/png">
 
-
     <link rel="stylesheet" href="menu.css">
     <link rel="stylesheet" href="card.css">
 
@@ -36,12 +35,14 @@
     </div>
 </div>
 
-
-
+<div class="titleimg">
+    xx
+</div>
 <div class="title">
     方向4名称
     <!--    可以放一个logo-->
 </div>
+
 
 <div class="container">
     <div class="modal">
@@ -216,39 +217,48 @@
 <style>
     .title {
         text-align: center;
-        background-image: url(../source/static/hitsz.jpg);
+        color: #005375;
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 300px;
+        height: 200px;
+        /*width: 100%;*/
+        /*backdrop-filter: blur(10px); !* 添加毛玻璃效果 *!*/
+        /*-webkit-backdrop-filter: blur(10px); !* 兼容Safari *!*/
+        /*position: relative; !* 为伪元素定位 *!*/
+        /*overflow: hidden;*/
+        /*padding-bottom: 5rem;*/
+    }
+    .titleimg {
+        font-size: 0;
+        text-align: center;
+        background-image: linear-gradient(to bottom, rgba(246, 246, 246, 0),  rgba(246, 246, 246, 1)), url(../source/static/hitsz.png);
         background-size: cover; /* 调整背景图片大小以覆盖整个元素 */
         background-position: center; /* 确保图片居中 */
-        color: #fff;
-        font-size: 32px;
-        font-weight: 600;
-        line-height: 280px;
-        height: 200px;
-        backdrop-filter: blur(10px); /* 添加毛玻璃效果 */
-        -webkit-backdrop-filter: blur(10px); /* 兼容Safari */
-        position: relative; /* 为伪元素定位 */
-    }
-    .title::before {
-        content: '';
+        color: #000000;
         position: absolute;
-        top: 0;
         left: 0;
         right: 0;
-        bottom: 0;
-        background: inherit; /* 继承父元素的背景图片 */
-        backdrop-filter: blur(10px); /* 添加毛玻璃效果 */
-        z-index: -1; /* 确保伪元素在文本后面 */
-        filter: blur(10px); /* 添加模糊效果 */
-        transform: scale(1.5); /* 适当调整模糊后的尺寸 */
+        top: 0; /* 固定在底部 */
+        z-index: -1; /* 确保在其他内容之上 */
+        height: 300px;
 
     }
+    /*.title::after {*/
+    /*    content: '';*/
+    /*    position: absolute;*/
+    /*    left: 0;*/
+    /*    right: 0;*/
+    /*    bottom: -50px; !* 控制延伸的高度 *!*/
+    /*    height: 50px; !* 延伸的高度 *!*/
+    /*    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent); !* 渐变效果 *!*/
+    /*    z-index: -1; !* 确保伪元素在文本后面 *!*/
+    /*}*/
     @media (max-width: 986px) {
         .title {
-            line-height: 200px;
+            line-height: 220px;
 
         }
     }
-
-
 </style>
 </html>

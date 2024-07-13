@@ -255,6 +255,38 @@ body {
         position: sticky;
         background: #015679;
     }
+
+    .header-logo {
+        height: 28px;
+        margin-right: 5px;
+        /*padding-right: 10px;*/
+        /*border-right: 2px solid #fff;*/
+        /*border-right-width: 50%;*/
+    }
+    .line {
+        content: '';
+        width: 2px;
+        height: 2rem;
+        background: #fff;
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+
+    .headertext {
+        display: flex;
+        flex-direction: column;
+        margin-left: 5px;
+    }
+
+    .group-name {
+        font-size: 0.9rem;
+        font-weight: bold;
+    }
+
+    .group-name-en {
+        font-size: 0.5rem;
+        margin-top: 0.2rem;
+    }
 }
 
 

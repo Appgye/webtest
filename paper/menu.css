@@ -4,130 +4,502 @@ body {
     /*font-family: Arial, sans-serif;*/
     /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; !*"Open Sans";, *!*/
     /*font-family: "Helvetica Neue", Helvetica, Tahoma, sans-serif;*/
-    /*font-family: "Merriweather Sans","PingFang SC", "Helvetica Neue", sans-serif;*/
-    /*font-family: "Times New Roman","PingFang SC";*/
     font-family: "MiSans", "PingFang SC", "Helvetica Neue", Helvetica, "Microsoft YaHei" , sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f6f6f6;
 }
 
-/*标题栏*/
+/*!*标题栏*!*/
+/*.header {*/
+/*    background-color: #005375;*/
+/*    color: #fff;*/
+/*    !*padding: 1rem;*!*/
+/*    text-align: center;*/
+/*    !*position: fixed;*!*/
+/*    position: sticky;*/
+/*    width: 100%;*/
+/*    top: 0;*/
+/*    z-index: 1000;*/
+/*    !*margin: 1rem 0 0 0;;*!*/
+/*}*/
+
+/*.headertext {*/
+/*    font-size: 30px;*/
+/*    font-weight: lighter;*/
+/*    !*margin: 1rem 0 r0 0;*!*/
+/*    padding: 1rem;*/
+/*}*/
+
+/*!*菜单栏*!*/
+/*.navbar {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    background-color: #024562;*/
+/*}*/
+/*!*适配移动端*!*/
+/*!*桌面端*!*/
+/*@media (min-width: 768px) {*/
+/*    .navbar {*/
+/*        flex-direction: row;*/
+/*    }*/
+/*    .menu-icon {*/
+/*        display: none;*/
+/*    }*/
+/*}*/
+/*!*移动端*!*/
+/*@media (max-width: 768px) {*/
+/*    .navbar {*/
+/*        flex-direction: column;*/
+/*        !*display: none; !* 默认隐藏 *!*!*/
+/*        max-height: 0;*/
+/*        overflow: hidden;*/
+/*        transition: max-height 0.3s ease-out; !* 折叠和展开动画 *!*/
+/*    }*/
+
+/*    .navbar a {*/
+/*        !*background-color: #005375;*!*/
+/*        display: block;*/
+/*        text-align: center;*/
+/*        padding: 0.5rem 1rem;*/
+/*        border-top: 1px solid #015679; !* 添加分割线 *!*/
+/*        !*width: calc(100% - 10rem); !* 调整分割线长度 *!*!*/
+/*        !*margin: 0 auto; !* 水平居中 *!*!*/
+/*    }*/
+/*    !*.navbar a:last-child {*!*/
+/*    !*    border-bottom: none; !* 移除最后一个选项的分割线 *!*!*/
+/*    !*}*!*/
+
+/*    .navbar.active {*/
+/*        !*display: flex; !* 当active类存在时显示 *!*!*/
+/*        max-height: 500px;*/
+/*    }*/
+
+/*    .menu-icon {*/
+/*        display: block;*/
+/*        background-color: #024562;*/
+/*        color: white;*/
+/*        text-align: center;*/
+/*        padding: 1rem;*/
+/*        cursor: pointer;*/
+/*    }*/
+/*}*/
+
+
+/*.navbar a {*/
+/*    color: white;*/
+/*    padding: 1rem;*/
+/*    text-decoration: none;*/
+/*    text-align: center;*/
+/*}*/
+
+/*.navbar a:hover {*/
+/*    background-color: #bc9955;*/
+/*}*/
+
+
+/*!*页脚*!*/
+/*.footer {*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+/*    justify-content: center;*/
+/*    padding: 1rem 0.5rem 1rem 0.5rem;*/
+/*    background-color: #024562;*/
+/*    color: #fff;*/
+/*}*/
+/*.footer .column {*/
+/*    margin: 1rem 0.5rem 1rem 0.5rem;*/
+/*    max-width: 300px;*/
+/*    width: 100%;*/
+/*    justify-content: center;*/
+/*    text-align: left;*/
+
+/*    !*text-align: left;*!*/
+/*}*/
+/*.footer p {*/
+/*    margin: 0.5rem 0;*/
+/*}*/
+
+/*.footer a {*/
+/*    color: #fff;*/
+/*    text-decoration: none;*/
+/*    word-wrap: break-word;*/
+/*}*/
+
+/*.footer a:hover {*/
+/*    text-decoration: underline;*/
+/*}*/
+
+/*新版本菜单栏*/
 .header {
-    background-color: #005375;
+    /*background-color: transparent;*/
     color: #fff;
-    /*padding: 1rem;*/
-    text-align: center;
+    /*background: linear-gradient(to bottom, rgba(0,83,117,100), rgba(0,83,117,0));*/
+    background-color: #005375;
     /*position: fixed;*/
     position: sticky;
-    width: 100%;
     top: 0;
+    width: 100%;
     z-index: 1000;
-    /*margin: 1rem 0 0 0;;*/
+    transition: background-color 0.3s ease;
+}
+
+.header-content {
+    max-width: 95rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem;
+}
+
+.header.scrolled {
+    background-color: #005375;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo {
+    height: 50px;
+    margin-right: 10px;
+    /*padding-right: 10px;*/
+    /*border-right: 2px solid #fff;*/
+    /*border-right-width: 50%;*/
+}
+.line {
+    content: '';
+    width: 2px;
+    height: 2.5rem;
+    background: #fff;
+    margin-right: 5px;
+    margin-left: 5px;
 }
 
 .headertext {
-    font-size: 30px;
-    font-weight: lighter;
-    /*margin: 1rem 0 r0 0;*/
-    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
 }
 
-/*菜单栏*/
+.group-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.group-name-en {
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+}
+
 .navbar {
     display: flex;
     justify-content: center;
-    background-color: #024562;
+    align-items: center;
+    position: relative;
 }
-/*适配移动端*/
-/*桌面端*/
-@media (min-width: 768px) {
-    .navbar {
-        flex-direction: row;
-    }
-    .menu-icon {
-        display: none;
-    }
-}
-/*移动端*/
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        /*display: none; !* 默认隐藏 *!*/
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-out; /* 折叠和展开动画 */
-    }
-
-    .navbar a {
-        /*background-color: #005375;*/
-        display: block;
-        text-align: center;
-        padding: 0.5rem 1rem;
-        border-top: 1px solid #015679; /* 添加分割线 */
-        /*width: calc(100% - 10rem); !* 调整分割线长度 *!*/
-        /*margin: 0 auto; !* 水平居中 *!*/
-    }
-    /*.navbar a:last-child {*/
-    /*    border-bottom: none; !* 移除最后一个选项的分割线 *!*/
-    /*}*/
-
-    .navbar.active {
-        /*display: flex; !* 当active类存在时显示 *!*/
-        max-height: 500px;
-    }
-
-    .menu-icon {
-        display: block;
-        background-color: #024562;
-        color: white;
-        text-align: center;
-        padding: 1rem;
-        cursor: pointer;
-    }
-}
-
 
 .navbar a {
     color: white;
     padding: 1rem;
     text-decoration: none;
     text-align: center;
+    font-size: 1rem;
+    border-bottom: 5px solid rgba(255, 255, 255, 0);
 }
 
 .navbar a:hover {
-    background-color: #bc9955;
+    border-bottom: 5px solid #bc9955;
 }
+
+.menu-icon {
+    display: none;
+    /*background-color: #024562;*/
+    color: white;
+    /*text-align: right;*/
+    /*padding: 0.1rem;*/
+    cursor: pointer;
+    margin-left: auto;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 1220px) {
+    .header-logo {
+        height: 35px;
+        margin-right: 5px;
+        /*padding-right: 10px;*/
+        /*border-right: 2px solid #fff;*/
+        /*border-right-width: 50%;*/
+    }
+    .line {
+        content: '';
+        width: 2px;
+        height: 2.5rem;
+        background: #fff;
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+
+    .headertext {
+        display: flex;
+        flex-direction: column;
+        margin-left: 5px;
+    }
+
+    .group-name {
+        font-size: 1rem;
+        font-weight: bold;
+    }
+
+    .group-name-en {
+        font-size: 0.6rem;
+        margin-top: 0.2rem;
+    }
+
+
+    .navbar a {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+
+    }
+}
+
+@media (max-width: 986px) {
+    .navbar {
+        flex-direction: column;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #024562;
+        z-index: 1000;
+    }
+
+    .navbar.active {
+        max-height: 500px; /* 或者根据需要设置合适的高度 */
+    }
+
+    .navbar a {
+        display: block;
+        text-align: center;
+        padding: 1rem;
+        /*border-top: 1px solid #015679;*/
+    }
+
+    .menu-icon {
+        display: block;
+
+    }
+    .header {
+        position: sticky;
+        background: #005375;
+    }
+
+    .header-logo {
+        height: 28px;
+        margin-right: 5px;
+        /*padding-right: 10px;*/
+        /*border-right: 2px solid #fff;*/
+        /*border-right-width: 50%;*/
+    }
+    .line {
+        content: '';
+        width: 2px;
+        height: 2rem;
+        background: #fff;
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+
+    .headertext {
+        display: flex;
+        flex-direction: column;
+        margin-left: 5px;
+    }
+
+    .group-name {
+        font-size: 0.9rem;
+        font-weight: bold;
+    }
+
+    .group-name-en {
+        font-size: 0.5rem;
+        margin-top: 0.2rem;
+    }
+}
+
+
+/*over*/
 
 
 /*页脚*/
 .footer {
+    width: 100%;
+    background-color: #024562;
+    color: #fff;
+    padding: 2rem 0;
+    /*max-width: 95rem;*/
+}
+.footerinf {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 1rem 0.5rem 1rem 0.5rem;
-    background-color: #024562;
-    color: #fff;
+    /*padding: 1rem 0.5rem 1rem 0.5rem;*/
+    max-width: 95rem;
+    margin: 0 auto;
 }
-.footer .column {
-    margin: 1rem 0.5rem 1rem 0.5rem;
-    max-width: 300px;
-    width: 100%;
-    justify-content: center;
-    text-align: left;
 
+.footerinf .column {
+    margin: 1rem 0.5rem 1rem 0.5rem;
+    padding: 0 1rem 0 1rem;
+    /*max-width: 300px;*/
+    text-align: left;
     /*text-align: left;*/
 }
-.footer p {
+.footerinf p {
     margin: 0.5rem 0;
 }
 
-.footer a {
-    color: #fff;
+.footerinf a {
+    color: #dddddd;
     text-decoration: none;
     word-wrap: break-word;
+    /*font-size: 14px;*/
 }
 
-.footer a:hover {
-    text-decoration: underline;
+.footerinf a:hover {
+    /*text-decoration: underline;*/
+    color: #ffffff;
+}
+
+.footername {
+    font-size: 18px;
+}
+.footeraddr {
+    font-size: 14px;
+    color: #dddddd;
+}
+@media (max-width: 1220px) {
+    .footername {
+        font-size: 16px;
+    }
+
+    .footeraddr {
+        font-size: 12px;
+    }
+}
+@media (max-width: 986px) {
+    .footerinf {
+        flex-direction: column;
+    }
+    .footername {
+        padding: 0 0 0 0.5rem;
+    }
+
+    .footeraddr {
+        padding: 0 0 0 0.5rem;
+    }
+}
+
+/*一张图片*/
+/*.main-image {*/
+/*    !*padding-top: 9rem;*!*/
+
+/*    width: 100%;*/
+/*    !*max-height: 400px;*!*/
+/*    height: auto;*/
+/*    object-fit: cover;*/
+/*    background-color: #f6f6f6;*/
+/*}*/
+
+
+/*多张图片轮播*/
+.carousel {
+    position: relative;
+    width: 100%;
+    height: auto;
+    /*max-height: 500px;*/
+    object-fit: fill; /* cover*/
+    background-color: #f6f6f6;
+    overflow: hidden;
+}
+
+.carousel-images {
+    display: flex;
+    width: 100%; /* 适应容器宽度 */
+    transform: translateX(-100%);  /* 初始显示第二张照片 */
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-images img {
+    /*width: 1500px;*/
+    /*height: 500px;*/
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/*轮播圆点*/
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+}
+
+
+.carousel-indicators div {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: rgba(255, 255, 255, 0.5); /* 50%透明白色 */
+    border-radius: 15%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-indicators div:first-child,
+.carousel-indicators div:last-child {
+    display: none;
+}
+
+.carousel-indicators .active {
+    background-color: #ffffff;
+}
+/*轮播左右切换按钮*/
+.carousel-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.carousel-buttons button {
+    background-color: rgba(2, 69, 98, 0.5);
+    border-radius: 50%;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    margin: 1.5rem;
+    transition: background-color 0.3s;
+}
+@media (max-width: 768px) {
+    .carousel-buttons button {
+        margin: 0.5rem;
+    }
+}
+
+.carousel-buttons button:hover {
+    background-color: #005375
 }

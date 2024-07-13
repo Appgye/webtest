@@ -255,7 +255,7 @@
 }
 
 .toc-item.has-children > a::before {
-    content: '\25B6'; /* 右三角形 */
+    content: '\25B8'; /* 右三角形 */
     font-size: 12px;
     visibility: visible;
     display: inline-block;
@@ -263,7 +263,7 @@
     transition: transform 0.3s ease;
 }
 .toc-item > a::before {
-    content: '\25B6';
+    content: '\25B8';
     font-size: 12px;
     visibility: hidden;
     /*font-size: 12px;*/

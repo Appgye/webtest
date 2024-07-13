@@ -225,3 +225,19 @@ document.querySelector('.carousel').addEventListener('touchend', function(event)
     }
     document.querySelector('.carousel-images').style.transition = 'transform 0.5s ease-in-out'; // 恢复过渡效果
 }, false);
+
+
+
+function toggleMenu() {
+    var navbar = document.querySelector('.navbar');
+    navbar.classList.toggle('active');
+}
+
+window.addEventListener('scroll', function() {
+    var header = document.querySelector('.header');
+    if (window.scrollY > 0) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});

@@ -214,6 +214,11 @@ body {
     border-bottom: 5px solid #bc9955;
 }
 
+.website {
+    color: white;
+    text-decoration: none;
+}
+
 .menu-icon {
     display: none;
     /*background-color: #024562;*/

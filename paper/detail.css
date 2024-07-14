@@ -276,11 +276,16 @@
 }
 
 .toc-item > ul {
-    display: none;
+    display: block; /* 改为 block */
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease; /* 添加过渡效果 */
     padding-left: 20px;
 }
 
 .toc-item.expanded > ul {
-    display: block;
+    max-height: 500px; /* 设定一个足够大的值来确保动画效果 */
+    opacity: 1;
 }
 

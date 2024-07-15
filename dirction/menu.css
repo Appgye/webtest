@@ -326,12 +326,14 @@ body {
     }
 
     .group-name {
-        font-size: 0.9rem;
+        /*带logo文字大小*/
+        /*font-size: 0.9rem;*/
         font-weight: bold;
     }
 
     .group-name-en {
-        font-size: 0.5rem;
+        /*带logo文字大小*/
+        /*font-size: 0.5rem;*/
         margin-top: 0.2rem;
     }
 }
@@ -387,6 +389,12 @@ body {
     font-size: 14px;
     color: #dddddd;
 }
+
+.footertext {
+    padding-left: 0.5rem;
+    margin-top: 0.5rem;
+}
+
 @media (max-width: 1220px) {
     .footername {
         font-size: 16px;

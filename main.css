@@ -323,7 +323,7 @@ body {
     border: 1px solid #ddd;
     /*border-radius: 5px;*/
     margin: 1rem;
-    max-width: 300px;
+    max-width: 400px;/*原来是300px*/
     /*text-align: left;*/
     width: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Attention is All you Need</title>
+    <title>Multi-Granularity Interactive Transformer Hashing for Cross-modal Retrieval</title>
     <link rel="icon" href="../../source/static/logo.png" type="image/png">
 
     <link rel="stylesheet" href="../menu.css">
@@ -28,10 +28,10 @@
         <div class="menu-icon" onclick="toggleMenu()">☰</div>
         <div class="navbar">
             <a href="../../index.html">首页</a>
-            <a href="../../dirction/direction1.html">方向1</a>
-            <a href="../../dirction/direction2.html">方向2</a>
-            <a href="../../dirction/direction3.html">方向3</a>
-            <a href="../../dirction/direction4.html">方向4</a>
+            <a href="../../dirction/direction1.html">跨媒体关联学习</a>
+            <a href="../../dirction/direction2.html">开放环境跨媒体学习</a>
+            <a href="../../dirction/direction3.html">跨模态紧致表达与融合</a>
+<!--            <a href="../../dirction/direction4.html">方向4</a>-->
             <a href="https://cszhengzhang.cn">个人主页</a>
             <a href="https://cszhengzhang.cn/BMI/">课题组主页</a>
         </div>
@@ -41,7 +41,7 @@
 <div class="total">
 <!--    <div class="kuang">-->
     <div class="title">
-        Attention is All you Need
+        Multi-Granularity Interactive Transformer Hashing for Cross-modal Retrieval
     </div>
 
     <div class="information">
@@ -50,7 +50,7 @@
     <!--            期刊:-->
     <!--        </span>-->
             <span class="Journalinf">
-                Advances in Neural Information Processing Systems
+                MM '23: Proceedings of the 31st ACM International Conference on Multimedia
             </span>
         </div>
         <div class="author">
@@ -58,7 +58,7 @@
                 Authors:
             </span>
             <span class="authorinf">
-                Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Łukasz Kaiser, Illia Polosukhin<br>
+                Yishu Liu, Qingpeng Wu, Zheng Zhang, Jingyi Zhang, Guangming Lu<br>
             </span>
         </div>
         <div class="publish">
@@ -66,7 +66,7 @@
                 Published:
             </span>
             <span class="publishinf">
-                2017
+                2023
             </span>
         </div>
     </div>
@@ -81,7 +81,7 @@
             <!--    <img src="https://via.placeholder.com/300" alt="Image 1" style="margin-right: 10px;">-->
             <!--    <img src="https://via.placeholder.com/300" alt="Image 2">-->
             <img src="../../source/direction1/1-1/1.png" alt="Image 1" style="margin-right: 10px;">
-            <img src="../../source/direction1/1-1/2.png" alt="Image 2">
+<!--            <img src="../../source/direction1/1-0/2.png" alt="Image 2">-->
         </div>
     </div>
 
@@ -90,47 +90,49 @@
             摘要
         </div>
         <div class="abstract">
-            The dominant sequence transduction models are based on complex recurrent or convolutional neural networks in
-            an encoder and decoder configuration. The best performing such models also connect the encoder and decoder
-            through an attention mechanisms. We propose a novel, simple network architecture based solely on an
-            attention mechanism, dispensing with recurrence and convolutions entirely. Experiments on two machine
-            translation tasks show these models to be superior in quality while being more parallelizable and requiring
-            significantly less time to train. Our single model with 165 million parameters, achieves 27.5 BLEU on
-            English-to-German translation, improving over the existing best ensemble result by over 1 BLEU. On
-            English-to-French translation, we outperform the previous single state-of-the-art with model by 0.7 BLEU,
-            achieving a BLEU score of 41.1.
+            With the powerful representation ability and privileged efficiency, deep cross-modal hashing (DCMH) has become an emerging fast similarity search technique. Prior studies primarily focus on exploring pairwise similarities across modalities, but fail to comprehensively capture the multi-grained semantic correlations during intra- and inter-modal negotiation. To tackle this issue, this paper proposes a novel Multi-granularity Interactive Transformer Hashing (MITH) network, which hierarchically considers both coarse- and fine-grained similarity measurements across different modalities in one unified transformer-based framework. To the best of our knowledge, this is the first attempt for multi-granularity transformer-based cross-modal hashing. Specifically, a well-designed distilled intra-modal interaction module is deployed to excavate modality-specific concept knowledge with global-local knowledge distillation under the guidance of implicit conceptual category-level representations. Moreover, we construct a contrastive inter-modal alignment module to mine modality-independent semantic concept correspondences with instance- and token-wise contrastive learning, respectively. Such a collaborative learning paradigm can jointly alleviate the heterogeneity and semantic gaps among different modalities from a multi-granularity perspective, yielding discriminative modality-invariant hash codes. Extensive experiments on multiple representative cross-modal datasets demonstrate the consistent superiority of MITH over the existing state-of-the-art baselines. The codes are available at https://github.com/DarrenZZhang/MITH.
         </div>
     </div>
 
     <div class="kuang">
         <div class="section-title">
-            目录
+            全文链接
         </div>
-        <div class="mulu">
-            <ul class="toc">
-                <li class="toc-item level-1"><a href="#section1">前言</a></li>
-                <li class="toc-item level-1 has-children"><a href="#section2">研究方法</a>
-                    <ul class="toc">
-                        <li class="toc-item level-2"><a href="#section2-1">数据集</a></li>
-                        <li class="toc-item level-2"><a href="#section2-2">模型架构</a></li>
-                    </ul>
-                </li>
-                <li class="toc-item level-1 has-children"><a href="#section3">实验结果</a>
-                    <ul class="toc">
-                        <li class="toc-item level-2 has-children"><a href="#section3-1">性能评价</a>
-                            <ul class="toc">
-                                <li class="toc-item level-3"><a href="#section3-1-1">评价指标</a></li>
-                                <li class="toc-item level-3"><a href="#section3-1-2">实验结果</a></li>
-                            </ul>
-                        </li>
-                        <li class="toc-item level-2"><a href="#section3-2">模型对比</a></li>
-                    </ul>
-                </li>
-                <li class="toc-item level-1"><a href="#section4">结论</a></li>
-            </ul>
+        <div class="abstract">
+            <p>访问全文：<a href="https://dl.acm.org/doi/abs/10.1145/3581783.3612411">链接</a></p>
         </div>
     </div>
 </div>
+
+<!--    <div class="kuang">-->
+<!--        <div class="section-title">-->
+<!--            目录-->
+<!--        </div>-->
+<!--        <div class="mulu">-->
+<!--            <ul class="toc">-->
+<!--                <li class="toc-item level-1"><a href="#section1">前言</a></li>-->
+<!--                <li class="toc-item level-1 has-children"><a href="#section2">研究方法</a>-->
+<!--                    <ul class="toc">-->
+<!--                        <li class="toc-item level-2"><a href="#section2-1">数据集</a></li>-->
+<!--                        <li class="toc-item level-2"><a href="#section2-2">模型架构</a></li>-->
+<!--                    </ul>-->
+<!--                </li>-->
+<!--                <li class="toc-item level-1 has-children"><a href="#section3">实验结果</a>-->
+<!--                    <ul class="toc">-->
+<!--                        <li class="toc-item level-2 has-children"><a href="#section3-1">性能评价</a>-->
+<!--                            <ul class="toc">-->
+<!--                                <li class="toc-item level-3"><a href="#section3-1-1">评价指标</a></li>-->
+<!--                                <li class="toc-item level-3"><a href="#section3-1-2">实验结果</a></li>-->
+<!--                            </ul>-->
+<!--                        </li>-->
+<!--                        <li class="toc-item level-2"><a href="#section3-2">模型对比</a></li>-->
+<!--                    </ul>-->
+<!--                </li>-->
+<!--                <li class="toc-item level-1"><a href="#section4">结论</a></li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 
 <div style="margin-bottom: 3rem;"></div>
 
